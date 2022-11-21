@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>O'zvagonta'mir</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm col-md col-lg container justify-content-center card">
+            <hr>
+            <div class="container bg-yellow d-flex justify-content-center text-black">
+                <h1 >Chiqish ma'lumotlarini tahrirlash</h1>
+            </div>
+            <hr>
+            <form th:action="@{/vagons/updateMalumotChiqish/{id}(id=${vagon.id})}" th:object="${vagon}" method="POST">
+
+                <div class="container bg-yellow d-flex justify-content-center text-black">
+                    <h5 >Yon ramalari (bak.ram) </h5>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label> 1-o'ng yon ramasi </label>
+                        <input name="ramaOng1"  type="number"   min="1950" max="2099" th:field="*{ramaOng1}" class="form-control"
+                               placeholder="chiqish: ishlab chiqarilgan yili" />
+                        <input name="ramaOng1Nomeri"  type="number" min="1"   th:field="*{ramaOng1Nomeri}" class="form-control"
+                               placeholder="chiqish: nomeri" />
+                    </div>
+                    <div class="form-group col">
+                        <label> 2-o'ng yon ramasi </label>
+                        <input name="ramaOng2"  type="number"   min="1950" max="2099" th:field="*{ramaOng2}" class="form-control"
+                               placeholder="chiqish: ishlab chiqarilgan yili" />
+                        <input name="ramaOng2Nomeri"  type="number" min="1"    th:field="*{ramaOng2Nomeri}" class="form-control"
+                               placeholder="chiqish: nomeri" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label>1-сhap yon ramasi</label>
+                        <input name="ramaChap1"  type="number"   min="1950" max="2099" th:field="*{ramaChap1}" class="form-control"
+                               placeholder="chiqish: ishlab chiqarilgan yili" />
+                        <input name="ramaChap1Nomeri"  type="number" min="1"    th:field="*{ramaChap1Nomeri}" class="form-control"
+                               placeholder="chiqish: nomeri" />
+                    </div>
+                    <div class="form-group col">
+                        <label>2-chap yon ramasi </label>
+                        <input name="ramaChap2"  type="number"  min="1950" max="2099" th:field="*{ramaChap2}" class="form-control"
+                               placeholder="chiqish: ishlab chiqarilgan yili" />
+                        <input name="ramaChap2Nomeri"  type="number" min="1"   th:field="*{ramaChap2Nomeri}" class="form-control"
+                               placeholder="chiqish: nomeri" />
+                    </div>
+                </div>
+                <div class="container bg-yellow d-flex justify-content-center text-black">
+                    <h5 >Ressor usti balkasi</h5>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label>1-balka</label>
+                        <input name="balka1"  type="number"   min="1950" max="2099" th:field="*{balka1}" class="form-control"
+                               placeholder="chiqish: ishlab chiqarilgan yili" />
+                        <input name="balka1Nomeri"  type="number" min="1"    th:field="*{balka1Nomeri}" class="form-control"
+                               placeholder="chiqish: nameri" />
+                    </div>
+                    <div class="form-group col">
+                        <label>2-balka</label>
+                        <input name="balka2"  type="number"   min="1950" max="2099" th:field="*{balka2}" class="form-control"
+                               placeholder="chiqish: ishlab chiqarilgan yili" />
+                        <input name="balka2Nomeri"  type="number" min="1"    th:field="*{balka2Nomeri}" class="form-control"
+                               placeholder="chiqish: nameri" />
+                    </div>
+                </div>
+                <div class="container bg-yellow d-flex justify-content-center text-black">
+                    <h5 >G'ildirak juftligi</h5>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label>1-g'ildirak juftligi</label>
+                        <input name="gildirak1" type="number"  min="1"
+                               th:field="*{gildirak1}" class="form-control" placeholder="chiqish: tegishliligi (29)" />
+                        <input name="gildirak1Nomeri" type="number"  min="1"
+                               th:field="*{gildirak1Nomeri}" class="form-control" placeholder="chiqish: nomeri (123456)" />
+                    </div>
+                    <div class="form-group col">
+                        <label>2-g'ildirak juftligi</label>
+                        <input name="gildirak2" type="number"  min="1"
+                               th:field="*{gildirak2}" class="form-control" placeholder="chiqish: tegishliligi (29)" />
+                        <input name="gildirak2Nomeri" type="number"   min="1"
+                               th:field="*{gildirak2Nomeri}" class="form-control" placeholder="chiqish: nomeri (123456)" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label>3-g'ildirak juftligi</label>
+                        <input name="gildirak3" type="number"  min="1"
+                               th:field="*{gildirak3}" class="form-control" placeholder="chiqish: tegishliligi (29)" />
+                        <input name="gildirak3Nomeri" type="number"  min="1"
+                               th:field="*{gildirak3Nomeri}" class="form-control" placeholder="chiqish: nomeri (123456)" />
+                    </div>
+                    <div class="form-group col">
+                        <label>4-g'ildirak juftligi</label>
+                        <input name="gildirak4" type="number"  min="1"
+                               th:field="*{gildirak4}" class="form-control" placeholder="chiqish: tegishliligi (29)" />
+                        <input name="gildirak4Nomeri" type="number"  min="1"
+                               th:field="*{gildirak4Nomeri}" class="form-control" placeholder="chiqish: nomeri (123456)" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label>Izoh</label>
+                        <input name="izohChiqish" type="String" th:field="*{izohChiqish}" class="form-control"
+                               placeholder="izoh kiritishingiz mumkin" />
+                    </div>
+                </div>
+                <div class="box-footer justify-content-center row">
+                    <button class="btn btn-primary btn-block col" type="submit">Saqlash</button>
+                    <a th:href="@{/vagons/chiqishMalumot}" class=" btn btn-danger col " >Ortga</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+</html>
